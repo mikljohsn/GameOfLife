@@ -19,7 +19,7 @@ function start() {
   makeBoardClickable();
   createModel();
   displayGenerationCount();
-  setInterval(gameLoop, 1000);
+  setInterval(gameLoop, 1500);
 }
 
 function createView() {
@@ -39,7 +39,7 @@ function createView() {
 }
 
 function makeBoardClickable() {
-  document.querySelector("#board").addEventListener("click", boardClicked);
+  document.querySelector("#board").addEventListener("mousedown", boardClicked);
 }
 
 function boardClicked(event) {
