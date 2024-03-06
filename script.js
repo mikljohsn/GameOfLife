@@ -2,7 +2,7 @@
 
 window.addEventListener("load", start);
 
-document.querySelector('#resetButton').addEventListener('click', resetGrid);
+document.querySelector("#resetButton").addEventListener("click", resetGrid);
 
 const GRID_WIDTH = 30;
 const GRID_HEIGHT = 20;
@@ -73,10 +73,9 @@ function updateCellView(row, col, cellState) {
 }
 
 function displayGenerationCount() {
-    const generationDisplay = document.getElementById('generationCount');
-    generationDisplay.textContent = `Generation: ${generationCounter}`;
-  }
-  
+  const generationDisplay = document.getElementById("generationCount");
+  generationDisplay.textContent = `Generation: ${generationCounter}`;
+}
 
 // ***************** MODEL *****************
 
@@ -117,14 +116,14 @@ function readFromCell(row, col) {
   return model[row][col];
 }
 
-function countNeighbours(row, col) { //the function made in class didnt work appearently, i got help for this one
+function countNeighbours(row, col) {
   let count = 0;
   for (let y = -1; y <= 1; y++) {
     for (let x = -1; x <= 1; x++) {
       let newRow = row + y;
       let newCol = col + x;
       if (
-        newRow >= 0 && 
+        newRow >= 0 &&
         newRow < GRID_HEIGHT &&
         newCol >= 0 &&
         newCol < GRID_WIDTH
@@ -166,7 +165,7 @@ function createModelArray() {
 }
 
 function gameLoop() {
-  const newGeneration = createModelArray(); 
+  const newGeneration = createModelArray();
 
   for (let row = 0; row < GRID_HEIGHT; row++) {
     for (let col = 0; col < GRID_WIDTH; col++) {
@@ -189,10 +188,10 @@ function resetGrid() {
   // Loop through each cell in the model and set its state to 0 (dead)
   for (let row = 0; row < GRID_HEIGHT; row++) {
     for (let col = 0; col < GRID_WIDTH; col++) {
-      model[row][col] = 0; 
+      model[row][col] = 0;
     }
   }
-  generationCounter = 0; 
-  displayBoard(); 
-  displayGenerationCount(); 
+  generationCounter = 0;
+  displayBoard();
+  displayGenerationCount();
 }
