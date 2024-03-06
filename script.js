@@ -14,7 +14,6 @@ const COLS = null;
 // ***************** VIEW *****************
 
 function start() {
-  console.log("JS is running");
   createView();
   makeBoardClickable();
   createModel();
